@@ -23,24 +23,33 @@ function getServerStatus() {
         getDate();
 
         if (!(typeof err === 'undefined' || err === null)) {
+            msg = settings.serverStatus.dnd.msg;
+            type = settings.serverStatus.dnd.type;
+
             client.user.setStatus('dnd');
-            client.user.setActivity(settings.serverStatus.dnd.msg, { type: settings.serverStatus.dnd.type });
+            client.user.setActivity(msg, { type: type });
 
             console.log((chalk.yellow('\[' + cleanDate + '\]:') + chalk.white(' Ping: ' + 'Error getting server status')));
             console.error(err);
         } else if (typeof res.players.sample === 'undefined') {
             msgPrefix = settings.serverStatus.idle.msg.preffix;
             msgSuffix = settings.serverStatus.idle.msg.suffix;
+            type = settings.serverStatus.idle.type;
+            enabled = settings.serverStatus.idle.enabled;
 
-            if (settings.serverStatus.idle.enabled === 1) client.user.setStatus('idle');
+            if (enabled === 1) client.user.setStatus('idle');
 
-            client.user.setActivity((msgPrefix.length > 0 ? msgPrefix + ' ' : '') + playerCount + (msgSuffix.length > 0 ? ' ' + msgSuffix : ''), { settings.serverStatus.idle.type }).then(presence => console.log(
+            client.user.setActivity(msgPrefix + playerCount + msgSuffix, { type: type }).then(presence => console.log(
                 chalk.cyan('\[' + cleanDate + '\]:') + chalk.white(' Ping: ' + playerCount)
             )).catch(console.error);
         } else {
+            msgPrefix = settings.serverStatus.online.msg.preffix;
+            msgSuffix = settings.serverStatus.online.msg.suffix;
+            type = settings.serverStatus.online.type;
+
             client.user.setStatus('online');
 
-            client.user.setActivity(settings.serverStatus.online.msg + playerCount, { settings.serverStatus.dnd.type }).then(presence => console.log(
+            client.user.setActivity(msgPrefix + playerCount + msgSuffix, { type: type }).then(presence => console.log(
                 chalk.cyan('\[' + cleanDate + '\]:') + chalk.white(' Ping: ' + playerCount)
             )).catch(console.error);
         }
