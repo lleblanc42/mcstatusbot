@@ -4,5 +4,26 @@
     "ip":"YOUR_SERVER_IP_HERE",
     "port":25565,
     "pingInterval":"30",
-    "embedColor":"7289DA"
+    "embedColor":"7289DA",
+    "serverStatus":{
+        "dnd":{
+            "msg":"Server offline",
+            "type":"PLAYING"
+        },
+        "idle":{
+            "msg":{
+                "prefix":"",
+                "suffix":""
+            },
+            "type":"PLAYING",
+            "enabled":0
+        },
+        "online":{
+            "msg":{
+                "prefix":"",
+                "suffix":""
+            },
+            "type":"PLAYING"
+        }
+    }
 }

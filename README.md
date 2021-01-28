@@ -15,8 +15,3 @@ Edit the `config.json` file to provide your bot token, preferred command prefix,
 - Replace `"30"` with the frequency, in seconds, at which you want the bot to ping the server. Defaults to pinging every 30 seconds.
 - Replace `"7289DA"` with the hex color code you prefer the bot's richEmbed messages to use.
 - Start the bot by running `start.sh` (Linux) or `start.bat` (Windows). The bot should connect and begin polling the server.
-
-# Default Commands
-- `/help` (aliases: `/commands`, `/list`, `/bot`) - List the other commands
-- `/status` (aliases: `/server`, `/online`) - Manually poll the Minecraft server whose IP address and port are listed in `config.json`, returning the server's version and a list of any online players
-- `/crash` - Stop the bot. If you're using a looping `start.sh` script like the one provided, this effectively restarts the bot.
