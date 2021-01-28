@@ -11,12 +11,13 @@ var pingFrequency = (settings.pingInterval * 1000);
 
 function getDate() {
     var date = new Date();
-    var cleanDate = date.toLocaleTimeString();
+
+    return date.toLocaleTimeString();
 }
 
 function getServerStatus() {
     mcping(settings.ip, settings.port, function(err, res) {
-        getDate();
+        var cleanDate = getDate();
 
         if (!(typeof err === 'undefined' || err === null)) {
             var msg = settings.serverStatus.dnd.msg;
