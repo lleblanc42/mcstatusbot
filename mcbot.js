@@ -18,8 +18,6 @@ function getDate() {
 
 function getServerStatus() {
     mcping(settings.ip, settings.port, function(err, res) {
-        playerCount = res.players.online + ' / ' + res.players.max;
-
         getDate();
 
         if (!(typeof err === 'undefined' || err === null)) {
@@ -36,6 +34,7 @@ function getServerStatus() {
             msgSuffix = settings.serverStatus.idle.msg.suffix;
             type = settings.serverStatus.idle.type;
             enabled = settings.serverStatus.idle.enabled;
+            playerCount = res.players.online + ' / ' + res.players.max;
 
             if (enabled === 1) client.user.setStatus('idle');
 
@@ -46,6 +45,7 @@ function getServerStatus() {
             msgPrefix = settings.serverStatus.online.msg.preffix;
             msgSuffix = settings.serverStatus.online.msg.suffix;
             type = settings.serverStatus.online.type;
+            playerCount = res.players.online + ' / ' + res.players.max;
 
             client.user.setStatus('online');
 
