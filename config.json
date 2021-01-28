@@ -3,7 +3,6 @@
     "ip":"MC_SERVER_IP",
     "port":MC_SERVER_PORT,
     "pingInterval":"PING_INTERVAL",
-    "embedColor":"EMBED_COLOR",
     "serverStatus":{
         "dnd":{
             "msg":"Server offline",
