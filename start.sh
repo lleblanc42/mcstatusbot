@@ -4,6 +4,7 @@ if [ $# -eq 2 ] && [ $1 -eq "-autoupdate" ]; then
     shift
 
     if [ $1 -eq 1 ]; then
+        echo "Auto updating..."
         git pull
         /usr/local/bin/npm update
     fi
