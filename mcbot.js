@@ -29,7 +29,7 @@ function getServerStatus() {
             console.log((chalk.yellow('\[' + cleanDate + '\]:') + chalk.white(' Ping: ' + 'Error getting server status')));
             console.error(err);
         } else {
-            var msgPrefix = (typeof res.players.sample === 'undefined' ? settings.serverStatus.idle.msg.preffix : settings.serverStatus.online.msg.preffix);
+            var msgPrefix = (typeof res.players.sample === 'undefined' ? settings.serverStatus.idle.msg.prefix : settings.serverStatus.online.msg.prefix);
             var msgSuffix = (typeof res.players.sample === 'undefined' ? settings.serverStatus.idle.msg.suffix : settings.serverStatus.online.msg.suffix);
             var type = (typeof res.players.sample === 'undefined' ? settings.serverStatus.idle.type : settings.serverStatus.online.type);
             var playerCount = res.players.online + ' / ' + res.players.max;
