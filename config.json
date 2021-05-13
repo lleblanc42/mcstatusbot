@@ -1,7 +1,7 @@
 {
     "token":"DISCORD_TOKEN",
     "ip":"MC_SERVER_IP",
-    "port":MC_SERVER_PORT,
+    "port":25565,
     "pingInterval":"PING_INTERVAL",
     "serverStatus":{
         "dnd":{
@@ -14,7 +14,7 @@
                 "suffix":""
             },
             "type":"PLAYING",
-            "enabled":DISCORD_IDLE_STATUS_ENABLED
+            "enabled":0
         },
         "online":{
             "msg":{
